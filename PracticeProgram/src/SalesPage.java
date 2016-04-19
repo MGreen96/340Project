@@ -131,7 +131,7 @@ public class SalesPage extends JFrame {
 
 		checkout.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				//saves the transaction to the completed transactions file.
+				TransactionIP.decInventory();
 			}
 		});
                 
