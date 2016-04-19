@@ -49,23 +49,23 @@ public class HomePage extends JFrame {
 	private JLabel Product6 = new JLabel("SnuggleUp: 0/25");
 	private JLabel Product7 = new JLabel("KnotOut: 0/25");
 	private JLabel Product8 = new JLabel("RotoClipper: 0/25");
-        private JLabel Product9 = new JLabel("TouCan: 0/25");
-        private JLabel Product10 = new JLabel("WonderWallet: 0/25");
-        private JLabel Product11 = new JLabel("FlexSeal: 0/25");
-        private JLabel Product12 = new JLabel("MiracleBambooPillow: 0/25");
-        private JLabel Product13 = new JLabel("PressurePro: 0/25");
-        private JLabel Product14 = new JLabel("TableMate: 0/25");
-        private JLabel Product15 = new JLabel("CopperFit: 0/25");
-        private JLabel Product16 = new JLabel("DutchGlow: 0/25");
-        private JLabel Product17 = new JLabel("Colorama: 0/25");
-        private JLabel Product18 = new JLabel("BeActiveBrace: 0/25");
-        private JLabel Product19 = new JLabel("GaZoos: 0/25");
-        private JLabel Product20 = new JLabel("Vidalia: 0/25");
-        private JLabel Product21 = new JLabel("FurnitureFeet: 0/25");
-        private JLabel Product22 = new JLabel("DuraWallet: 0/25");
-        private JLabel Product23 = new JLabel("KittyShack: 0/25");
-        private JLabel Product24 = new JLabel("ZipSox: 0/25");
-        private JLabel Product25 = new JLabel("FootAngel: 0/25");
+    private JLabel Product9 = new JLabel("TouCan: 0/25");
+    private JLabel Product10 = new JLabel("WonderWallet: 0/25");
+    private JLabel Product11 = new JLabel("FlexSeal: 0/25");
+    private JLabel Product12 = new JLabel("MiracleBambooPillow: 0/25");
+    private JLabel Product13 = new JLabel("PressurePro: 0/25");
+    private JLabel Product14 = new JLabel("TableMate: 0/25");
+    private JLabel Product15 = new JLabel("CopperFit: 0/25");
+    private JLabel Product16 = new JLabel("DutchGlow: 0/25");
+    private JLabel Product17 = new JLabel("Colorama: 0/25");
+    private JLabel Product18 = new JLabel("BeActiveBrace: 0/25");
+    private JLabel Product19 = new JLabel("GaZoos: 0/25");
+    private JLabel Product20 = new JLabel("Vidalia: 0/25");
+    private JLabel Product21 = new JLabel("FurnitureFeet: 0/25");
+    private JLabel Product22 = new JLabel("DuraWallet: 0/25");
+    private JLabel Product23 = new JLabel("KittyShack: 0/25");
+    private JLabel Product24 = new JLabel("ZipSox: 0/25");
+    private JLabel Product25 = new JLabel("FootAngel: 0/25");
         
         
 	private JButton updateStock = new JButton("Update Stock");
@@ -165,8 +165,7 @@ public class HomePage extends JFrame {
                 ItemArray.add(Product_24);
                 ItemArray.add(Product_25);
                 
-                
-                 ArrayList <JLabel> LabelArray = new ArrayList();
+                ArrayList <JLabel> LabelArray = new ArrayList();
                 LabelArray.add(Product1);
                 LabelArray.add(Product2);
                 LabelArray.add(Product3);
@@ -192,15 +191,6 @@ public class HomePage extends JFrame {
                 LabelArray.add(Product23);
                 LabelArray.add(Product24);
                 LabelArray.add(Product25);
-                
-                
-                for(int i = 0; i < ItemArray.size(); i++){
-                	LabelArray.get(i).setText(ItemArray.get(i).getName() + ": " + Product_1.getInStock() +"/" + Product_1.getMaxStock());
-                }
-                
-                
-                
-                
                 
                 
                 
@@ -325,6 +315,13 @@ public class HomePage extends JFrame {
                 //
 
 		// Button Functionality
+		updateStock.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				for(int i = 0; i < ItemArray.size(); i++){
+                	LabelArray.get(i).setText(ItemArray.get(i).getName() + ": " + ItemArray.get(i).getInStock() +"/" + ItemArray.get(i).getMaxStock());
+                }
+			}
+		});
 		Sales.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				CardLayout c1 = (CardLayout) Cards.getLayout();
@@ -376,6 +373,9 @@ public class HomePage extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				CardLayout c1 = (CardLayout) (Cards.getLayout());
 				c1.show(Cards, INVENTORY);
+				for(int i = 0; i < ItemArray.size(); i++){
+                	LabelArray.get(i).setText(ItemArray.get(i).getName() + ": " + ItemArray.get(i).getInStock() +"/" + ItemArray.get(i).getMaxStock());
+                }
 			}
 		});
 		backInventory.addActionListener(new ActionListener() {
