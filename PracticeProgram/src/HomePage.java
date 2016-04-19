@@ -166,7 +166,37 @@ public class HomePage extends JFrame {
                 ItemArray.add(Product_25);
                 
                 
+                 ArrayList <JLabel> LabelArray = new ArrayList();
+                LabelArray.add(Product1);
+                LabelArray.add(Product2);
+                LabelArray.add(Product3);
+                LabelArray.add(Product4);
+                LabelArray.add(Product5);
+                LabelArray.add(Product6);
+                LabelArray.add(Product7);
+                LabelArray.add(Product8);
+                LabelArray.add(Product9);
+                LabelArray.add(Product10);
+                LabelArray.add(Product11);
+                LabelArray.add(Product12);
+                LabelArray.add(Product13);
+                LabelArray.add(Product14);
+                LabelArray.add(Product15);
+                LabelArray.add(Product16);
+                LabelArray.add(Product17);
+                LabelArray.add(Product18);
+                LabelArray.add(Product19);
+                LabelArray.add(Product20);
+                LabelArray.add(Product21);
+                LabelArray.add(Product22);
+                LabelArray.add(Product23);
+                LabelArray.add(Product24);
+                LabelArray.add(Product25);
                 
+                
+                for(int i = 0; i < ItemArray.size(); i++){
+                	LabelArray.get(i).setText(ItemArray.get(i).getName() + ": " + Product_1.getInStock() +"/" + Product_1.getMaxStock());
+                }
                 
                 
                 
