@@ -4,10 +4,12 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JMenuBar;
@@ -39,14 +41,33 @@ public class HomePage extends JFrame {
 
 	// Inventory Panel UI Elements
 	private final String INVENTORY = "Inventory";
-	private JLabel Product1 = new JLabel("Slushy Magic: 0/0");
-	private JLabel Product2 = new JLabel("Flipeez: 0/0");
-	private JLabel Product3 = new JLabel("Sham-wow: 0/0");
-	private JLabel Product4 = new JLabel("Toucan: 0/0");
-	private JLabel Product5 = new JLabel("GyroBowl: 0/0");
-	private JLabel Product6 = new JLabel("EZCracker: 0/0");
-	private JLabel Product7 = new JLabel("WonderFILE: 0/0");
-	private JLabel Product8 = new JLabel("SliceOMatic: 0/0");
+	private JLabel Product1 = new JLabel("WonderFILE: 0/25");
+	private JLabel Product2 = new JLabel("MagicMesh: 0/25");
+	private JLabel Product3 = new JLabel("LazerBond: 0/25");
+	private JLabel Product4 = new JLabel("MiracleGrillMat: 0/25");
+	private JLabel Product5 = new JLabel("CarCane: 0/25");
+	private JLabel Product6 = new JLabel("SnuggleUp: 0/25");
+	private JLabel Product7 = new JLabel("KnotOut: 0/25");
+	private JLabel Product8 = new JLabel("RotoClipper: 0/25");
+        private JLabel Product9 = new JLabel("TouCan: 0/25");
+        private JLabel Product10 = new JLabel("WonderWallet: 0/25");
+        private JLabel Product11 = new JLabel("FlexSeal: 0/25");
+        private JLabel Product12 = new JLabel("MiracleBambooPillow: 0/25");
+        private JLabel Product13 = new JLabel("PressurePro: 0/25");
+        private JLabel Product14 = new JLabel("TableMate: 0/25");
+        private JLabel Product15 = new JLabel("CopperFit: 0/25");
+        private JLabel Product16 = new JLabel("DutchGlow: 0/25");
+        private JLabel Product17 = new JLabel("Colorama: 0/25");
+        private JLabel Product18 = new JLabel("BeActiveBrace: 0/25");
+        private JLabel Product19 = new JLabel("GaZoos: 0/25");
+        private JLabel Product20 = new JLabel("Vidalia: 0/25");
+        private JLabel Product21 = new JLabel("FurnitureFeet: 0/25");
+        private JLabel Product22 = new JLabel("DuraWallet: 0/25");
+        private JLabel Product23 = new JLabel("KittyShack: 0/25");
+        private JLabel Product24 = new JLabel("ZipSox: 0/25");
+        private JLabel Product25 = new JLabel("FootAngel: 0/25");
+        
+        
 	private JButton updateStock = new JButton("Update Stock");
 	private JButton backInventory = new JButton("Back");
 	private JPanel BottomInventoryPanel = new JPanel(new GridLayout(1,2));
@@ -88,11 +109,76 @@ public class HomePage extends JFrame {
 		setResizable(false);
 		setBounds(70, 70, 800, 600);
 		setVisible(true);
+                
+                //Define products
+                
+                ArrayList<Item> ItemArray = new ArrayList();
+                Item Product_1 = new Item("WonderFILE", 19.99, 25, 25, null, 375.00);
+                Item Product_2 = new Item("MagicMesh", 14.99, 25, 25, null, 300.00);
+                Item Product_3 = new Item("LazerBond", 19.99, 25, 25, null, 375.00);
+                Item Product_4 = new Item("MiracleGrillMat", 9.95, 25, 25, null, 175.00);
+                Item Product_5 = new Item("CarCane", 19.95, 25, 25, null, 375.00);
+                Item Product_6 = new Item("SnuggleUp", 19.95, 25, 25, null, 375.00);
+                Item Product_7 = new Item("KnotOut", 14.95, 25, 25, null, 300.00);
+                Item Product_8 = new Item("RotoClipper", 19.95, 25, 25, null, 375.00);
+                Item Product_9 = new Item("TouCan", 19.99, 25, 25, null, 375.00);
+                Item Product_10 = new Item("WonderWallet", 19.95, 25, 25, null, 375.00);
+                Item Product_11 = new Item("FlexSeal", 14.95, 25, 25, null, 300.00);
+                Item Product_12 = new Item("MiracleBambooPillow", 29.95, 25, 25, null, 650.00);
+                Item Product_13 = new Item("PressurePro", 99.95, 25, 25, null, 1750.00);
+                Item Product_14 = new Item("TableMate", 29.95, 25, 25, null, 650.00);
+                Item Product_15 = new Item("CopperFit", 19.95, 25, 25, null, 375.00);
+                Item Product_16 = new Item("DutchGlow", 9.95, 25, 25, null, 150.00);
+                Item Product_17 = new Item("Colorama", 12.99, 25, 25, null, 215.00);
+                Item Product_18 = new Item("BeActiveBrace", 14.95, 25, 25, null, 300.00);
+                Item Product_19 = new Item("GaZoos", 14.95, 25, 25, null, 300.00);
+                Item Product_20 = new Item("Vidalia", 19.95, 25, 25, null, 375.00);
+                Item Product_21 = new Item("FurnitureFeet", 9.95, 25, 25, null, 150.00);
+                Item Product_22 = new Item("DuraWallet", 14.99, 25, 25, null, 250.00);
+                Item Product_23 = new Item("KittyShack", 19.95, 25, 25, null, 375.00);
+                Item Product_24 = new Item("ZipSox", 12.95, 25, 25, null, 375.00);
+                Item Product_25 = new Item("FootAngel", 12.95, 25, 25, null, 215.00);
+                
+                ItemArray.add(Product_1);
+                ItemArray.add(Product_2);
+                ItemArray.add(Product_3);
+                ItemArray.add(Product_4);
+                ItemArray.add(Product_5);
+                ItemArray.add(Product_6);
+                ItemArray.add(Product_7);
+                ItemArray.add(Product_8);
+                ItemArray.add(Product_9);
+                ItemArray.add(Product_10);
+                ItemArray.add(Product_11);
+                ItemArray.add(Product_12);
+                ItemArray.add(Product_13);
+                ItemArray.add(Product_14);
+                ItemArray.add(Product_15);
+                ItemArray.add(Product_16);
+                ItemArray.add(Product_17);
+                ItemArray.add(Product_18);
+                ItemArray.add(Product_19);
+                ItemArray.add(Product_20);
+                ItemArray.add(Product_21);
+                ItemArray.add(Product_22);
+                ItemArray.add(Product_23);
+                ItemArray.add(Product_24);
+                ItemArray.add(Product_25);
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
 		// Panel Layout Manager:
 		homePanel.setLayout(null);
 		managerPanel.setLayout(null);
-		inventoryPanel.setLayout(new GridLayout(15, 2));
+		inventoryPanel.setLayout(new GridLayout(26, 2));
 		productPanel.setLayout(new BorderLayout());
 		userManagerPanel.setLayout(new BorderLayout());
 
@@ -138,9 +224,25 @@ public class HomePage extends JFrame {
 		inventoryPanel.add(Product6);
 		inventoryPanel.add(Product7);
 		inventoryPanel.add(Product8);
-		for (int i = 0; i < 6; i++) {
-			inventoryPanel.add(new JLabel());
-		}
+                inventoryPanel.add(Product9);
+                inventoryPanel.add(Product10);
+                inventoryPanel.add(Product11);
+                inventoryPanel.add(Product12);
+                inventoryPanel.add(Product13);
+                inventoryPanel.add(Product14);
+                inventoryPanel.add(Product15);
+                inventoryPanel.add(Product16);
+                inventoryPanel.add(Product17);
+                inventoryPanel.add(Product18);
+                inventoryPanel.add(Product19);
+                inventoryPanel.add(Product20);
+                inventoryPanel.add(Product21);
+                inventoryPanel.add(Product22);
+                inventoryPanel.add(Product23);
+                inventoryPanel.add(Product24);
+                inventoryPanel.add(Product25);
+                
+                
 		
 		inventoryPanel.add(BottomInventoryPanel);
 		BottomInventoryPanel.add(backInventory);
@@ -165,14 +267,20 @@ public class HomePage extends JFrame {
 		bottomPanel.add(newUser);
 		
 		
-		// Add Items to the SalesManagerPanael
+		
+                //Patrick's part
+                
+                // Add Items to the SalesManagerPanael
+                
+                
 		salesManagerPanel.setLayout(new BorderLayout());
 		salesManagerPanel.add(topSalePanel, BorderLayout.NORTH);
 		salesManagerPanel.add(bottomSalePanel, BorderLayout.SOUTH);
 		bottomSalePanel.add(backSalesManager);
 		leftSalePanel.add(sales);
 		for(int i = 0; i <25; i++){
-			leftSalePanel.add(new JLabel("Product " + Integer.toString(i + 1) + ":")); 
+			leftSalePanel.add(new JLabel("Product " + Integer.toString(i + 1) + ": "
+                            + ItemArray.get(i).toString())); 
 		}
 		topSalePanel.add(leftSalePanel);
 		topSalePanel.add(rightSalePanel);
@@ -183,6 +291,8 @@ public class HomePage extends JFrame {
 		rightSalePanel.add(new JLabel("Revenue dedicated to taxes:"));
 		rightSalePanel.add(new JLabel("Net Revenue:"));
 		rightSalePanel.add(new JLabel("Revenue in Account:"));
+                
+                //
 
 		// Button Functionality
 		Sales.addActionListener(new ActionListener(){
@@ -248,7 +358,7 @@ public class HomePage extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// CardLayout c1 = (CardLayout) (Cards.getLayout());
 				// c1.show(Cards, TRANSACTIONS);
-				new SalesPage();
+				new SalesPage(ItemArray);
 			}
 		});
 		backTransactions.addActionListener(new ActionListener() {
