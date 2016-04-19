@@ -113,12 +113,5 @@ public class Transaction {
 	public String generateTID() {
 		return new BigInteger(130, random).toString(32);
 	}
-	
-	public void decInventory(){
-            for(int i = 0; i < productsPurchased.size(); i++){
-                productsPurchased.get(i).decStock();
-            }
-            
-        }
 
 }

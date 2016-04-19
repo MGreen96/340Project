@@ -62,7 +62,7 @@ public class SalesPage extends JFrame {
 
 	public SalesPage(ArrayList ItemArray) {
 		Transaction TransactionIP = new Transaction();
-		
+		Item PJ = new Item("WonderFILE", 10, 10, 10, null, 0);
 		
 		// Parameters of Class Set
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -121,7 +121,6 @@ public class SalesPage extends JFrame {
 		rightButtons.setLayout(new GridLayout(1,2,5,5));
 		rightButtons.add(finalize);
 		rightButtons.add(checkout);
-		checkout.setEnabled(false);
 
 		// Set alignment of label
 		transaction.setText(transaction.getText() + " ID: " + TransactionIP.getTransactionID());
@@ -132,8 +131,7 @@ public class SalesPage extends JFrame {
 
 		checkout.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				TransactionIP.decInventory();
-				dispose();
+				//saves the transaction to the completed transactions file.
 			}
 		});
                 
@@ -347,9 +345,6 @@ public class SalesPage extends JFrame {
 				Product23.setEnabled(false);
 				Product24.setEnabled(false);
                                 Product25.setEnabled(false);
-				checkout.setEnabled(true);
-        			finalize.setEnabled(false);
-                		backTransactions.setEnabled(false);
 
 			}
 		});
