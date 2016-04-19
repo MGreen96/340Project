@@ -8,10 +8,10 @@ import java.beans.*;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -53,9 +53,17 @@ public class LoginPage extends JFrame {
 
 			public void actionPerformed(ActionEvent e) {
 
-				setVisible(false);
-				new HomePage();
-
+				//changes text to change username and password.
+                                if(username.getText().equalsIgnoreCase("admin") && password.getText().equalsIgnoreCase("admin"))
+                                {
+                                    setVisible(false);
+                                    new HomePage();
+                                }
+                                else
+                                {
+                                    JOptionPane.showMessageDialog(null,"The input Username and Password are incorrect.","Incorrect Input",JOptionPane.WARNING_MESSAGE);
+                                }
+                                
 			}
 
 		});
